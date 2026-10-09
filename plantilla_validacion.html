@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validación de Matrícula UMSA</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .card {
+            width: 700px;
+            background-color: #fff;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            /* Líneas horizontales verdes suaves como textura adicional */
+            background-image: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 18px,
+                rgba(0, 128, 0, 0.05) 18px,
+                rgba(0, 128, 0, 0.05) 36px
+            );
+        }
+        
+        /* MARCA DE AGUA VERDE HORIZONTAL EN TODA LA IMAGEN */
+        .card::before {
+            content: "MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS  MATRICULA VÁLIDA - UNIVERSIDAD MAYOR DE SAN ANDRÉS";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: rgba(0, 128, 0, 0.25);
+            font-size: 10px;
+            line-height: 1.6;
+            word-wrap: break-word;
+            text-align: justify;
+            z-index: 0;
+            pointer-events: none;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .alert-banner {
+            color: #8b0000;
+            text-align: center;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 10px;
+            position: relative;
+            z-index: 2;
+            background-color: transparent;
+            border-bottom: none;
+        }
+        
+        .content {
+            padding: 10px 30px 30px 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* MARCA DE AGUA DEL ESCUDO - RUTA RELATIVA */
+        .watermark-logo {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            background-image: url('marcadeagua.jpeg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.2;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .header-titles {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header-titles h1 {
+            font-size: 16px;
+            margin: 0 0 5px 0;
+            color: #000;
+        }
+        .header-titles h2 {
+            font-size: 16px;
+            margin: 0;
+            color: #000;
+        }
+        
+        .matricula-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .date {
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .nro-matricula {
+            font-size: 17px;
+            font-weight: bold;
+        }
+        
+        .main-info {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .photo-container {
+            width: 140px;
+            height: 180px;
+            background-color: #8bbce1;
+            border: 1px solid #ccc;
+            margin-right: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 5px;
+        }
+        
+        .student-name {
+            font-size: 18px;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+        
+        .data-grid {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .data-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .data-item .label {
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        .data-item .value {
+            font-size: 16px;
+        }
+        
+        .category-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .category-label {
+            font-weight: bold;
+            font-size: 17px;
+        }
+        .category-value {
+            font-size: 17px;
+        }
+        .sub-category {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-info {
+            margin-top: 10px;
+        }
+        .footer-label {
+            font-weight: bold;
+            font-size: 17px;
+            margin-left: 30px;
+            margin-bottom: 5px;
+        }
+        .footer-value {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="alert-banner">
+        PARA DAR TOTAL VALIDEZ A ESTA MATRICULA REVISE QUE EL URL COMIENCE CON<br>
+        https://sia.umsa.bo/validacion/
+    </div>
+    
+    <div class="content">
+        <div class="watermark-logo"></div>
+        
+        <div class="header-titles">
+            <h1>UNIVERSIDAD MAYOR DE SAN ANDRÉS</h1>
+            <h2>MATRÍCULA UNIVERSITARIA</h2>
+        </div>
+        
+        <div class="matricula-row">
+            <div class="date">30/01/2026 07:04</div>
+            <div class="nro-matricula">Nro. Matrícula : 32579 / 2026</div>
+        </div>
+        
+        <div class="main-info">
+            <div class="photo-container">
+                <!-- FOTO - RUTA RELATIVA -->
+                <img src="HECTOR.png" alt="Foto del estudiante" onerror="this.style.display='none'">
+            </div>
+            
+            <div class="details">
+                <div class="student-name">VASQUEZ QUISPE HECTOR JHONNY</div>
+                
+                <div class="data-grid">
+                    <div class="data-item">
+                        <span class="label">C.I.</span>
+                        <span class="value">7081537</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">COD. EST.</span>
+                        <span class="value">MMHi3ejk</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">REG. UNIV.</span>
+                        <span class="value">1878618</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">DIP.BACH.</span>
+                        <span class="value">71372</span>
+                    </div>
+                </div>
+                
+                <div class="category-row">
+                    <div class="category-label">CATEGORIA MATRÍCULA</div>
+                    <div class="category-value">ANTIGUO - 2024</div>
+                </div>
+                <div class="sub-category">
+                    Matricula General-ESTUDIANTE &nbsp;&nbsp;&nbsp; 27 Bs.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-info">
+            <div class="footer-label">FACULTAD</div>
+            <div class="footer-value">CIENCIAS PURAS Y NATURALES</div>
+            
+            <div class="footer-label">CARRERA / PROGRAMA</div>
+            <div class="footer-value">INFORMATICA</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

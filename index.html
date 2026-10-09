@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Plantilla Matrícula UMSA</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        .ticket {
+            display: flex;
+            height: 420px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .ticket-top {
+            border-bottom: 2px dashed #000;
+        }
+        
+        /* LEFT PANE */
+        .left-pane {
+            width: 60%;
+            position: relative;
+            padding: 20px 30px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        /* MARCA DE AGUA - RUTA RELATIVA */
+        .watermark {
+            position: absolute;
+            top: 47%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 220px;
+            height: 220px;
+            z-index: 0;
+            background-image: url('marcadeagua.jpeg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            pointer-events: none;
+            opacity: 0.25;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .print-date {
+            font-size: 11px;
+            width: 140px;
+            padding-top: 35px;
+            line-height: 1.4;
+        }
+        .main-title {
+            flex: 1;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        .nro-matricula {
+            margin-top: 5px;
+            margin-left: 20px;
+            font-size: 13px;
+        }
+
+        .middle {
+            display: flex;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+        .photo {
+            width: 110px;
+            height: 135px;
+            background-color: #8bbce1;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .student-info {
+            flex: 1;
+            padding-top: 5px;
+            position: relative;
+            z-index: 2;
+        }
+        .name {
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+        .info-table {
+            width: 100%;
+            font-size: 12px;
+            text-align: left;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+        .info-table td {
+            width: 25%;
+            padding: 0 5px 0 0;
+            vertical-align: top;
+            line-height: 1.4;
+        }
+        
+        .category-row {
+            display: flex;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .cat-col {
+            width: 50%;
+        }
+
+        .bottom-info {
+            font-size: 12px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .label-bold {
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-left: 20px;
+        }
+        .value-centered {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* RIGHT PANE */
+        .right-pane {
+            width: 40%;
+            border-left: 2px dashed #000;
+            padding: 20px 30px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .qr-title {
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+        .qr-img {
+            width: 160px;
+            height: 160px;
+            margin-bottom: 35px;
+        }
+        .qr-img img {
+            width: 100%;
+            height: 100%;
+            image-rendering: pixelated;
+        }
+        .qr-link {
+            font-size: 8px;
+            text-align: center;
+            max-width: 320px;
+            color: #000;
+            line-height: 1.2;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- TICKET TOP -->
+    <div class="ticket ticket-top">
+        <div class="left-pane">
+            <div class="watermark"></div>
+            <div class="content">
+                <div class="header">
+                    <div class="print-date">
+                        <b>Fecha de Impresión</b><br>
+                        30/01/2026 07:04
+                    </div>
+                    <div class="main-title">
+                        <b>UNIVERSIDAD MAYOR DE SAN ANDRÉS</b><br>
+                        <b>MATRÍCULA UNIVERSITARIA</b><br>
+                        <b>GESTIÓN 2026</b><br>
+                        <div class="nro-matricula">
+                            <b>Nro. Matrícula : &nbsp;&nbsp;&nbsp;&nbsp; 32579 / 2026</b>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="middle">
+                    <div class="photo">
+                        <!-- FOTO - RUTA RELATIVA -->
+                        <img src="HECTOR.png" alt="Foto del estudiante" onerror="this.style.display='none'">
+                    </div>
+                    <div class="student-info">
+                        <div class="name">VASQUEZ QUISPE HECTOR JHONNY</div>
+                        <table class="info-table">
+                            <tr>
+                                <td><b>C.I.</b><br>7081537</td>
+                                <td><b>COD. EST.</b><br>MMHi3ejk</td>
+                                <td><b>REG. UNIV.</b><br>1878618</td>
+                                <td><b>DIP.BACH.</b><br>71372</td>
+                            </tr>
+                        </table>
+                        <div class="category-row">
+                            <div class="cat-col"><b>CATEGORIA MATRÍCULA</b></div>
+                            <div class="cat-col">ANTIGUO - 2024</div>
+                        </div>
+                        <div class="category-row">
+                            <div class="cat-col">Matricula General-ESTUDIANTE</div>
+                            <div class="cat-col">27 Bs.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bottom-info">
+                    <div class="label-bold">FACULTAD</div>
+                    <div class="value-centered">CIENCIAS PURAS Y NATURALES</div>
+                    <div class="label-bold">CARRERA / PROGRAMA</div>
+                    <div class="value-centered">INFORMATICA</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-pane">
+            <div class="qr-title">Escanea el Codigo QR para ver la autenticidad de la<br>matricula Universitaria</div>
+            <div class="qr-img">
+                <!-- QR COMO IMAGEN PNG -->
+                <img src="qr_validacion.png" alt="QR Code">
+            </div>
+            <div class="qr-link">
+                https://sia.umsa.bo/validacion/dl04v1cn41/ctru114m47354k3ycc5=yNFEEoW3XhzU8Rhtl/qmPjFvsap8WZrkCHmQLTck<br>028=
+            </div>
+        </div>
+    </div>
+
+    <!-- TICKET BOTTOM -->
+    <div class="ticket">
+        <div class="left-pane">
+            <div class="watermark"></div>
+            <div class="content">
+                <div class="header">
+                    <div class="print-date">
+                        <b>Fecha de Impresión</b><br>
+                        30/01/2026 07:04
+                    </div>
+                    <div class="main-title">
+                        <b>UNIVERSIDAD MAYOR DE SAN ANDRÉS</b><br>
+                        <b>MATRÍCULA UNIVERSITARIA</b><br>
+                        <b>GESTIÓN 2026</b><br>
+                        <div class="nro-matricula">
+                            <b>Nro. Matrícula : &nbsp;&nbsp;&nbsp;&nbsp; 32579 / 2026</b>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="middle">
+                    <div class="photo">
+                        <!-- FOTO - RUTA RELATIVA -->
+                        <img src="HECTOR.png" alt="Foto del estudiante" onerror="this.style.display='none'">
+                    </div>
+                    <div class="student-info">
+                        <div class="name">VASQUEZ QUISPE HECTOR JHONNY</div>
+                        <table class="info-table">
+                            <tr>
+                                <td><b>C.I.</b><br>7081537</td>
+                                <td><b>COD. EST.</b><br>MMHi3ejk</td>
+                                <td><b>REG. UNIV.</b><br>1878618</td>
+                                <td><b>DIP.BACH.</b><br>71372</td>
+                            </tr>
+                        </table>
+                        <div class="category-row">
+                            <div class="cat-col"><b>CATEGORIA MATRÍCULA</b></div>
+                            <div class="cat-col">ANTIGUO - 2024</div>
+                        </div>
+                        <div class="category-row">
+                            <div class="cat-col">Matricula General-ESTUDIANTE</div>
+                            <div class="cat-col">27 Bs.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bottom-info">
+                    <div class="label-bold">FACULTAD</div>
+                    <div class="value-centered">CIENCIAS PURAS Y NATURALES</div>
+                    <div class="label-bold">CARRERA / PROGRAMA</div>
+                    <div class="value-centered">INFORMATICA</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-pane">
+            <div class="qr-title">Escanea el Codigo QR para ver la autenticidad de la<br>matricula Universitaria</div>
+            <div class="qr-img">
+                <!-- QR COMO IMAGEN PNG -->
+                <img src="qr_validacion.png" alt="QR Code">
+            </div>
+            <div class="qr-link">
+                https://sia.umsa.bo/validacion/dl04v1cn41/ctru114m47354k3ycc5=yNFEEoW3XhzU8Rhtl/qmPjFvsap8WZrkCHmQLTck<br>028=
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
